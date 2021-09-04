@@ -19,8 +19,8 @@ def gx(var):
     return var - (fx(var) / flinha(var))
 
 #precisão requerida
-e1 = 1*(10**-15)
-e2 = 1*(10**-15)
+e1 = 1*(10**-4)
+e2 = 1*(10**-4)
 
 k = 0  #contador de interações
 
