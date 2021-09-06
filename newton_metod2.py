@@ -46,7 +46,7 @@ while True:
 x = round(x, 7)
 print("########################")
 print("valor da raiz: " + str(x_final))
-print("Valor da fx: " + str(fx((x_final))))
+print("Valor da fx: " + str(fx(x_final)))
 print("Erro  em x: " + str(math.fabs(x - x0)))
 print("Numero de iterações: " + str(k))
 print("########################")
