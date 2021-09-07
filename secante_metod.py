@@ -6,9 +6,8 @@ x1 = 2  #aproximação inicial 2
 x = 0
 
 x_final = 0 #irá guardar a raiz
-x_ant = 0 #guardará antiga raiz
-x_suc = 0 # guardará a proxima raiz
-
+xn = 0
+xn2 = 0
 raiz = 1.4474142712962368 # Melhor aproximação da raiz por método de newton
 
 #funções
@@ -21,24 +20,18 @@ def gx(x0, x1):
     return result
 
 
-def ordem_conver(raiz, x_ant, x_suc, x_final):
-    en_next = math.fabs(raiz - x_suc)
-    en = math.fabs(raiz - x_final)
-    en_past = math.fabs(raiz - x_ant)
-
-    i = en_next * (en**-1)
-
-    print(en_next/en)
-    print(i)
-    print(en/en_past)
+def ordem_conver(raiz, xn2, xn1, xn):
+    en_next = math.fabs(raiz - xn)
+    en = math.fabs(raiz - xn1)
+    en_past = math.fabs(raiz - xn2)
 
     result = (math.log(en_next/en)) / (math.log(en/en_past))
     return result
 
 
 #precisão requerida
-e1 = 1*(10**-4)
-e2 = 1*(10**-4)
+e1 = 1*(10**-12)
+e2 = 1*(10**-12)
 
 k = 0  #contador de interações
 
@@ -58,13 +51,18 @@ while True:
         print(math.fabs(fx(x)))
 
         x_final = x
+        xn = x1
         break
+    xn2 = x0
     x0 = x1
     x1 = x
-
+x_final = round(x_final, 15)
+ordem = ordem_conver(raiz, xn2, xn, x_final)
+ordem = math.fabs(round(ordem, 1))
 print("########################")
 print("valor da raiz: " + str(x_final))
 print("Valor da f(x): " + str(fx(x_final)))
 print("Erro  em x: " + str(math.fabs(x - x1)))
 print("Numero de iterações: " + str(k))
+print("Ordem de convergência: " + str(ordem))
 print("########################")
