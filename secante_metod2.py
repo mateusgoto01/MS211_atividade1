@@ -6,8 +6,7 @@ x1 = 0.5  #aproximação inicial 2
 x = 0
 
 x_final = 0 #irá guardar a raiz
-xn = 0 #guardará antiga raiz
-xn2 = 0 # guardará a proxima raiz
+x_array = []
 
 raiz = 1.324717957244746 # Melhor aproximação da raiz por método de newton
 
@@ -21,10 +20,10 @@ def gx(x0, x1):
     return result
 
 
-def ordem_conver(raiz, xn2, xn1, xn):
-    en_next = math.fabs(raiz - xn)
-    en = math.fabs(raiz - xn1)
-    en_past = math.fabs(raiz - xn2)
+def ordem_conver(raiz, arr, len):
+    en_next = math.fabs(raiz - arr[len - 1])
+    en = math.fabs(raiz - arr[len - 2])
+    en_past = math.fabs(raiz - arr[len - 3])
 
     result = (math.log(en_next/en)) / (math.log(en/en_past))
     return result
@@ -40,7 +39,7 @@ k = 0  #contador de interações
 check = False
 
 while True:
-
+    x_array.append(round(x, 14))
     if math.fabs(fx(x1)) < e1:
         print(math.fabs(fx(x1)))
         x_final = x1
@@ -53,14 +52,14 @@ while True:
         print(math.fabs(fx(x)))
 
         x_final = x
-        xn = x1
         break
-    xn2 = x0
     x0 = x1
     x1 = x
 
-ordem = ordem_conver(raiz, xn2, xn, x_final)
-ordem = math.fabs(round(ordem, 1))
+len = len(x_array)
+print(x_array)
+ordem = ordem_conver(raiz, x_array, len)
+ordem = math.fabs(round(ordem, 2))
 
 print("########################")
 print("valor da raiz: " + str(x_final))
