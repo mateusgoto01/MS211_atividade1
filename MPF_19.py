@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import math
 
 x0 = 1  #aproximação inicial
@@ -51,7 +51,6 @@ print("Erro  em x: " + str(math.fabs(x - x0)))
 print("Numero de iterações: " + str(k))
 print("Ordem de convergência: " + str(ordem))
 print("########################")
-=======
 import math
 
 x0 = 1  #aproximação inicial
@@ -104,4 +103,3 @@ print("Erro  em x: " + str(math.fabs(x - x0)))
 print("Numero de iterações: " + str(k))
 print("Ordem de convergência: " + str(ordem))
 print("########################")
->>>>>>> origin/main

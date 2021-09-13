@@ -55,7 +55,7 @@ print("Valor da f(x): " + str(fx(x_final)))
 print("Erro em x: " + str(math.fabs(x - x0)))
 print("Numero de iterações: " + str(k))
 print("Ordem de convergência: " + str(ordem))
-=======
+
 import math
 
 x0 = 1.5  #aproximação inicial
@@ -112,5 +112,4 @@ print("Valor da f(x): " + str(fx(x_final)))
 print("Erro em x: " + str(math.fabs(x - x0)))
 print("Numero de iterações: " + str(k))
 print("Ordem de convergência: " + str(ordem))
->>>>>>> origin/main
 print("########################")
