@@ -47,7 +47,7 @@ while True:
     if math.fabs(x - x1) < e2 or math.fabs(fx(x)) < e1:
         print(x)
         print(math.fabs(fx(x)))
-        x_final = x
+        x_final = round(x, 15)
         break
 
     x0 = x1
